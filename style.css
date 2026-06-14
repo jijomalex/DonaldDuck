@@ -118,7 +118,12 @@ img {
     .menu-grid{
         grid-template-columns:1fr;
     }
-
+   
+.menu-preview {
+    flex-direction: column;   /* stack neatly */
+    align-items: stretch;     /* let image fill width */
+  }
+   
     #menuImage{
         width:100%;
         max-width: 100%;
