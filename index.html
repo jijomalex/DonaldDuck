@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donald Duck | Eat • Sleep • Work</title>
+
+    <meta name="description" content="Premium Chai and Kadi in BTM Layout, Bengaluru">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-light: #e8c76b;
+            --dark: #050505;
+            --card: #111;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 20px;
+        }
+
+        /* Header */
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, .55);
+            border-bottom: 1px solid rgba(212, 175, 55, .15);
+        }
+
+        .logo-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 28px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            padding: 100px 20px;
+
+            background:
+                radial-gradient(circle at center,
+                    rgba(212, 175, 55, .18),
+                    transparent 35%),
+                radial-gradient(circle at top,
+                    #3b250d,
+                    #050505 65%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero img {
+            width: 280px;
+            border-radius: 50%;
+            box-shadow:
+                0 0 30px rgba(212, 175, 55, .3),
+                0 0 80px rgba(212, 175, 55, .12);
+            transition: .4s;
+        }
+
+        .hero img:hover {
+            transform: scale(1.05);
+        }
+
+        .hero h1 {
+            margin-top: 25px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            color: var(--gold);
+            font-weight: 400;
+        }
+
+        .hero p {
+            color: #ddd;
+            margin-top: 15px;
+            font-size: 1.15rem;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: black;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            margin-left: 15px;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Section */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--gold);
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* Menu */
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: linear-gradient(145deg, #101010, #1a1a1a);
+
+            padding: 30px;
+            border-radius: 20px;
+
+            border: 1px solid rgba(212, 175, 55, .15);
+
+            transition: .4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            box-shadow:
+                0 15px 30px rgba(212, 175, 55, .15);
+        }
+
+        .card h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #ccc;
+        }
+
+        /* About */
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            max-width: 450px;
+            margin: auto;
+            display: block;
+            border-radius: 20px;
+        }
+
+        .about h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .about p {
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            background: #0e0e0e;
+            padding: 60px;
+            border-radius: 25px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, .15);
+        }
+
+        .contact-box p {
+            margin-bottom: 25px;
+            color: #ddd;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            border-top: 1px solid #222;
+            color: #999;
+        }
+
+        /* Animation */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1s;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile */
+
+        @media(max-width:768px) {
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+
+            .hero img {
+                width: 220px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 35px;
+            }
+        }
+    </style>
+</head>
+<script>
+    function showItem(imageSrc, card) {
+
+        const image = document.getElementById("menuImage");
+
+        image.style.opacity = "0";
+
+        setTimeout(() => {
+            image.src = imageSrc;
+            image.style.opacity = "1";
+        }, 200);
+
+        document
+            .querySelectorAll(".menu-card")
+            .forEach(c => c.classList.remove("active"));
+
+        card.classList.add("active");
+    }
+</script>
+
+<body>
+
+    <header>
+
+        <div class="logo-text">
+            Donald Duck
+        </div>
+
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <img src="images/Logo.png" alt="Kofee Byte Logo">
+
+            <h1>Eat • Sleep • Work</h1>
+
+            <p>
+                Premium Chai, Kadi and Kona adi.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#menu" class="btn btn-primary">
+                    Explore Menu
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Visit Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SIGNATURE MENU -->
+    <section class="menu-section" id="menu">
+
+        <h2 class="section-title">Menu</h2>
+
+        <center>
+            <div class="menu-preview">
+                <img id="menuImage" src="images/Apple.jpg" alt="Apple">
+            </div>
+
+            <div class="menu-divider"></div>
+
+            <div class="menu-grid">
+        </center>
+
+        <div class="menu-grid">
+
+            <div class="menu-card active" onclick="showItem('images/Apple.jpg', this)">
+                <h3>Apple</h3>
+            </div>
+
+            <div class="menu-card" onclick="showItem('images/Orange.jpg', this)">
+                <h3>Orange</h3>
+            </div>
+
+            <div class="menu-card" onclick="showItem('images/Watermelon.jpg', this)">
+                <h3>Watermelon</h3>
+            </div>
+
+            <div class="menu-card" onclick="showItem('images/Mango.jpg', this)">
+                <h3>Mango</h3>
+            </div>
+
+            <div class="menu-card" onclick="showItem('images/Pineapple.jpg', this)">
+                <h3>Pineapple</h3>
+            </div>
+
+            <div class="menu-card" onclick="showItem('images/Strawberry.jpg', this)">
+                <h3>Strawberry</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--ABOUT-->
+
+    <section id="about">
+
+        <h2 class="section-title reveal">
+            About Donald Duck
+        </h2>
+
+        <div class="about">
+
+            <div class="reveal">
+
+                <h3>A Café Built for KONA</h3>
+
+                <p>
+                    At Kona, every cup and every bite is crafted to bring people together.
+                    Whether you're catching up with friends, working remotely, or enjoying a quiet moment,
+                    our premium Chai and Kadi create the perfect experience.
+                </p>
+
+            </div>
+
+            <div class="reveal">
+
+                <img src="images/Logo.png" alt="Donald Duck">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="contact-box reveal">
+
+            <h2 class="section-title">
+                Visit Us
+            </h2>
+
+            <p>
+                BTM Layout 2nd Stage,<br>
+                Bengaluru, Karnataka 560076
+            </p>
+
+            <a href="https://wa.me/919878456512" class="btn btn-primary">
+                Order on WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        © 2026 Donald Duck. All Rights Reserved.
+
+    </footer>
+
+    <script>
+
+        const reveals = document.querySelectorAll('.reveal');
+
+        window.addEventListener('scroll', () => {
+
+            reveals.forEach(el => {
+
+                const top = el.getBoundingClientRect().top;
+
+                if (top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
