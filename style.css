@@ -101,11 +101,10 @@ img {
         font-size:3.2rem;
     }
 
-    .hero img {
-        width: 100%;
-        object-fit: cover; /* crops nicely if needed */
-   }
-   
+    .hero img{
+        width:100%;
+        height:auto;
+    }
 
     .about{
         grid-template-columns:1fr;
@@ -118,16 +117,19 @@ img {
     .menu-grid{
         grid-template-columns:1fr;
     }
-   
-.menu-preview {
-    flex-direction: column;   /* stack neatly */
-    align-items: stretch;     /* let image fill width */
-  }
-   
-    #menuImage{
+
+    .menu-preview{
         width:100%;
-        max-width: 100%;
+        padding:0 10px;
+        box-sizing:border-box;
+    }
+
+    #menuImage{
+        display:block;
+        width:100%;
+        max-width:100%;
         height:auto;
-        object-fit: contain;
+        margin:0 auto;
+        border-radius:15px;
     }
 }
