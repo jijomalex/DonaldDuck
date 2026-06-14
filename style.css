@@ -1,6 +1,11 @@
 /* ==========================
    MENU IMAGE SHOWCASE
 ========================== */
+img {
+  max-width: 100%;   /* scales down to fit container */
+  height: auto;      /* keeps aspect ratio */
+  display: block;    /* removes inline gaps */
+}
 
 .menu-section{
     text-align:center;
