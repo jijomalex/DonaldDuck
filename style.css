@@ -96,9 +96,11 @@
         font-size:3.2rem;
     }
 
-    .hero img{
-        width:220px;
-    }
+    .hero img {
+        width: 100%;
+        object-fit: cover; /* crops nicely if needed */
+   }
+   
 
     .about{
         grid-template-columns:1fr;
