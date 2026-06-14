@@ -11,23 +11,23 @@ img {
     text-align:center;
 }
 
-.menu-preview{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-
-    margin:0 auto 100px auto;
+.menu-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;    /* allows content to wrap on small screens */
+  width: 100%;
+  margin: 0 auto 50px auto;
 }
 
 #menuImage{
     display:block;
     margin:0 auto;
 
-    width:650px;
-    max-width:90%;
+    width:100%;
+    max-width:650px;
 
-    height:450px;
+    height:auto;
     object-fit:cover;
 
     border-radius:25px;
@@ -121,6 +121,7 @@ img {
 
     #menuImage{
         width:100%;
+        max-width: 100%;
         height:auto;
     }
 }
